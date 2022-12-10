@@ -5,11 +5,11 @@
 class Price < Formula
   desc ""
   homepage "https://github.com/ixxiv/price-action"
-  version "0.1.5"
+  version "0.1.6"
 
   on_macos do
-    url "https://github.com/ixxiv/price-action/releases/download/v0.1.5/price_0.1.5_macOS-all.tar.gz"
-    sha256 "0ad89322c6c3eaa6b78450e6c07f4a761cc1a717b1e473348811509dc76c1047"
+    url "https://github.com/ixxiv/price-action/releases/download/v0.1.6/price_0.1.6_macOS-all.tar.gz"
+    sha256 "6c3c8ce139b0b2f8d9de354ab1e2018d9fbfc9c734cd5d9e5e527ed0d54ef580"
 
     def install
       bin.install "price"
@@ -17,17 +17,17 @@ class Price < Formula
   end
 
   on_linux do
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/ixxiv/price-action/releases/download/v0.1.5/price_0.1.5_Linux-ARM64.tar.gz"
-      sha256 "2ebe39e1b5d2d794a66b0a4c43d2eaa2660f1f77ac3a2d7befaa9394005c6947"
+    if Hardware::CPU.intel?
+      url "https://github.com/ixxiv/price-action/releases/download/v0.1.6/price_0.1.6_Linux-64bit.tar.gz"
+      sha256 "4c50328c398dd07f8d7e9a752215e9440befb697c7b0bfcca4c569adba2e6d11"
 
       def install
         bin.install "price"
       end
     end
-    if Hardware::CPU.intel?
-      url "https://github.com/ixxiv/price-action/releases/download/v0.1.5/price_0.1.5_Linux-64bit.tar.gz"
-      sha256 "c624967ebd1131e207fd81d704e9dbf93a82e35a4f6840267bd4b217f68db934"
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/ixxiv/price-action/releases/download/v0.1.6/price_0.1.6_Linux-ARM64.tar.gz"
+      sha256 "d1507b95ac655a262ad25dcf4b0957d287e1598f9ac562bd8cc151e76533718a"
 
       def install
         bin.install "price"
